@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Protected Access</title>
+    <script type="text/javascript">
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            var correctPassword = "secure123"; // The password to access the shared files
+            if (password === correctPassword) {
+                window.location.href = "https://heidnercloudstorage.blob.core.windows.net/clients-shared-files?sp=racw&st=2024-06-27T20:00:46Z&se=2024-07-05T04:00:46Z&spr=https&sv=2022-11-02&sr=c&sig=oU4CFHQybBTjlMu5wv2gBPhiibUusRuF%2BfwZGhL1aGU%3D"; // The SAS URL
+            } else {
+                alert("Incorrect password");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Enter Password to Access Files</h2>
+    <input type="password" id="password" />
+    <button onclick="checkPassword()">Submit</button>
+</body>
+</html>
